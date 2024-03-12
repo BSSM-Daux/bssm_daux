@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+    <gazebo>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+            <!-- Wheel information -->
+            <left_joint>left_wheel_joint</left_joint>
+            <right_joint>right_wheel_joint</right_joint>
+            <wheel_separation>0.35</wheel_separation> <!-- 바퀴 분리 -->
+            <wheel_diameter>0.1</wheel_diameter> <!-- 바퀴 직경 -->
+            
+            <!-- Limits -->
+            <max_wheel_torque>200</max_wheel_torque> <!-- 토크 설정 -->
+            <max_wheel_acceleration>4.0</max_wheel_acceleration> <!-- 가속력 -->
+            
+            <!-- Output -->
+            <odometry_frame>odom</odometry_frame> <!-- 주행 거리 측정 -->
+            <robot_base_frame>base_link</robot_base_frame> <!-- 몰랑 -->
+
+            <publish_odom>true</publish_odom> <!-- 거리 측정 메시지 -->
+            <publish_odom_tf>true</publish_odom_tf> <!-- odom tf -->
+            <publish_wheel_tf>true</publish_wheel_tf> <!-- 자동차 휠 좌표 ㅌ-->
+
+        </plugin>
+    </gazebo>
+
+</robot>
